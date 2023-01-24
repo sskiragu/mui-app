@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button, Container, styled, Typography } from "@mui/material";
+import LoginIcon from '@mui/icons-material/Login';
 
 function App() {
+  const BlueButton = styled(Button)(({theme}) => ({
+    backgroundColor: theme.palette.otherColor.main,
+    color: "#888"
+  }))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Container>
+        <Button startIcon={<LoginIcon/>} sx={{
+          mt: 5
+          }} variant="contained" color="otherColor" >Login</Button>
+        <Typography variant="h1">
+          Some text will be added here!
+        </Typography>
+        <BlueButton>New Btn</BlueButton>
+     </Container>
+    </>
   );
 }
 
